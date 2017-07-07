@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tweets, only: [:create, :destroy]
   get 'home/index'
   root 'home#index'
 

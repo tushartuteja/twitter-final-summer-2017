@@ -21,3 +21,21 @@ header {
     	}
     }
 }
+
+main {
+	display: flex;
+	aside{
+		width: 250px;
+	}
+
+	section{
+		flex-grow: 1;
+		div.createTweet{
+			textarea{
+				width: 90%;
+				padding-left: 4px;
+				padding-top: 4px;
+			}
+		}
+	}
+}

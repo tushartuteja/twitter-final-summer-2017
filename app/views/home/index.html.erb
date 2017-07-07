@@ -27,6 +27,42 @@
 </aside>
 
 <section>
+
+<div class="createTweet">
+
+<%= form_for @tweet do |f| %>
+
+<%= f.label :content %> <br>
+
+<%= f.text_area :content %>  <br>
+<div class="actions">
+<%= f.submit  id: 'create_tweet_submit' %>
+<span id="characters">0</span>
+</div>
+
+<% end %>
+
+ <% if @tweet.errors.any? %>
+      
+      <% @tweet.errors.full_messages.each do |message| %>
+      
+
+      <script type="text/javascript">
+	noty({text: '<%= message %>', type: 'error'});
+</script>
+
+
+   
+      
+
+
+      <% end %>
+     
+  <% end %>
+
+</div>
+
+
 	
 </section>
 
