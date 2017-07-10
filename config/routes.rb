@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post '/un_follow' => 'home#un_follow'
   post '/upload_image' => 'home#upload_image'
 
+  get '/ajax' => 'home#ajax'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

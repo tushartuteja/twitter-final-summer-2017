@@ -45,6 +45,10 @@ class HomeController < ApplicationController
   	return redirect_to '/profile'
   end
 
+  def ajax
+  	render :json => {text: "text"}
+  end
+
 
 
 

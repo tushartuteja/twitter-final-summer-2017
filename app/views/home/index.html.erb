@@ -58,3 +58,24 @@
 </section>
 
 </main>
+
+
+
+<script type="text/javascript">
+	$.ajax({url: '/ajax',
+		data: {
+			text: "text"
+		}
+, success: function(data){
+	console.log(data);
+	console.log("request completed");
+},
+error: function(){
+		console.log(arguments);
+
+	console.log("some error");
+}
+
+});
+</script>
+
