@@ -51,7 +51,15 @@ main {
                         height: 40px;
                         border-radius: 20px;
                         background-color: white;
+
+                        img{
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 20px;
+                        }
                     }
+
+
                 }
                 div.right{
                     flex-grow:1;

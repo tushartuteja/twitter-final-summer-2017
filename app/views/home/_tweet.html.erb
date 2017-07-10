@@ -1,6 +1,12 @@
 <div class="tweet">
 	<div class="left">
-		<div class="userImage"></div>
+		<div class="userImage">
+			
+<% if tweet.user.profile_picture %>
+	<img src="/uploads/<%=tweet.user.profile_picture %>">
+<% end %>
+
+		</div>
 	</div>
 
 
