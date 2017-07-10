@@ -1,0 +1,8 @@
+<%= form_tag url_for(controller: :home, action: :upload_image) do %>
+
+
+<%= file_field_tag :image %>
+<br>
+<%= submit_tag %>
+
+<% end %>

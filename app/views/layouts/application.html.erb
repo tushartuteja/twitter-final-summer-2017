@@ -24,6 +24,29 @@
 </script>
 <% end %>
  
+
+
+ <% if user_signed_in? %>
+<header>
+
+<div class="logo">
+<%= image_tag 'images.png' %>
+</div>
+
+
+<nav>
+
+<ul>
+<li> <%= link_to "Users", users_path %> </li>
+<li>  <%= link_to "Sign Out",destroy_user_session_path,method: :delete %></li>
+</ul>
+</nav>
+
+
+</header>
+
+
+ <% end %>
 <%= yield %>
 
 </body>

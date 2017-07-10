@@ -37,5 +37,39 @@ main {
 				padding-top: 4px;
 			}
 		}
+
+        div.tweets{
+            div.tweet{
+                border: 1px solid black;
+                display: flex;
+                width: 90%;
+                padding: 6px;
+                div.left{
+                    width: 50px;
+                    div.userImage{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 20px;
+                        background-color: white;
+                    }
+                }
+                div.right{
+                    flex-grow:1;
+                }
+            }
+
+
+        }
 	}
+}
+
+
+div.user{
+    border: 1px solid black;
+    border-bottom: none;
+
+}
+
+div.user:last-child{
+    border-bottom: 1px solid black;
 }

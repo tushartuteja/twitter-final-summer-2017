@@ -5,6 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
 
+  def feed
+  	users = followee_ids
+  	users << id
+  	Tweet.where(user_id: users).order(created_at: :desc)
+  end
+
 
   def follow_relation user_id
   	return UserRelations::SELF if id == user_id
@@ -22,6 +28,11 @@ class User < ActiveRecord::Base
   def can_un_follow user_id
     return follow_relation(user_id) == UserRelations::FOLLOWED
   end
+
+  def followee_ids
+  	FollowMapping.where(follower_id: id).pluck(:followee_id)
+  end
+
 
   class UserRelations
   	SELF = 0
