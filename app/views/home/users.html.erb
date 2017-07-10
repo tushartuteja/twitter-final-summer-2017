@@ -1,0 +1,12 @@
+<% @users.each do |user| %>
+
+<%= user.email %> , <% if current_user.can_follow user.id %> 
+<%= link_to "Follow", url_for(controller: :home, action: :follow, followee_id: user.id), method: :post %>
+<% end %>
+
+<% if current_user.can_un_follow user.id %> 
+"UnFollow" 
+<% end %>
+<br>
+
+<% end %>
