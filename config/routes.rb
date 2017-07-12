@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/upload_image' => 'home#upload_image'
 
   get '/ajax' => 'home#ajax'
+  post '/toggle' => 'likes#toggle_like'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

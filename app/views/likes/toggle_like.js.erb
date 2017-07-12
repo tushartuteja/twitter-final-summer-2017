@@ -1,0 +1,11 @@
+
+<% if @is_liked %>
+$('#like_<%= @tweet.id%>').html("UnLike");
+noty({text: 'Tweet was Liked', type: 'alert'});
+
+<% else %>
+
+$('#like_<%= @tweet.id%>').html("Like");
+noty({text: 'Tweet was UnLiked', type: 'alert'});
+
+<% end %>

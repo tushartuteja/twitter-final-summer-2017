@@ -1,0 +1,2 @@
+noty({text: 'Tweet was Created', type: 'alert'});
+$('#tweets').prepend("<%= escape_javascript (render 'home/tweet', tweet: @tweet) %>");
