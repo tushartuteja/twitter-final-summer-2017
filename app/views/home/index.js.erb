@@ -1,0 +1,14 @@
+
+
+<% @feed.each do |tweet| %>
+$('#tweets').append("<%= escape_javascript (render 'home/tweet', tweet: tweet) %>");
+<% end %>
+
+
+window.offset = <%= @new_offset %>;
+window.load_more_active = false;
+<% unless @show_load_more %> 
+
+$('#load_more').hide();
+
+<% end %>

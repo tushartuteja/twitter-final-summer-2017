@@ -44,14 +44,18 @@
 
 <div id="tweets">
 
-<% current_user.feed.each do |tweet| 
+<%  @feed.each do |tweet| 
 	%>
 
 <%= render 'tweet', tweet: tweet %>
 	<% end %>
 
-</div>
 
+
+</div>
+<div id='load_more'>
+	<%= render 'load_more', offset: 10 %>
+</div>
 
 	
 </section>
