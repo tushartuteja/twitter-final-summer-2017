@@ -5,7 +5,16 @@ class Tweet < ActiveRecord::Base
 
 
   def liked_by user_id
-  	Like.where(tweet_id: id, user_id: user_id).length > 0
+    result = false
+  	likes.each do |like|
+      result = like.user_id == user_id
+      if result
+        break
+      end
+    end
+
+    return result
+
   end
 
 
@@ -17,6 +26,16 @@ class Tweet < ActiveRecord::Base
   	end
 
   end
+
+  def can_modify user
+    if User.roles[user.role] >= User.roles["editor"]
+      return true
+    else
+      return user.id == user_id
+    end
+
+  end
+
 
 
 end

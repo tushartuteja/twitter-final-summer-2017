@@ -4,11 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-
+  enum role: {member: 0, editor: 2, moderator: 1, admin: 3}     
   def feed
+
   	users = followee_ids
   	users << id
-  	Tweet.where(user_id: users).order(created_at: :desc)
+  	Tweet.includes(:user, :likes).where(user_id: users).order(created_at: :desc)
   end
 
 
@@ -32,6 +33,18 @@ class User < ActiveRecord::Base
   def followee_ids
   	FollowMapping.where(follower_id: id).pluck(:followee_id)
   end
+
+  # def role_str
+  #   case role
+  #   when 0
+  #     return 'member'
+  #   when 1
+  #     return 'moderator'
+  #   when 2
+  #   when 3
+
+  # end
+
 
 
   class UserRelations
