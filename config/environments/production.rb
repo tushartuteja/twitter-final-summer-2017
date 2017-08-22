@@ -73,6 +73,15 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+   config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'gmail.com',
+    user_name:            'railsproject100@gmail.com',
+    password:             'railsproject',
+    authentication:       :login,
+    enable_starttls_auto: true
+  }
 
   config.action_mailer.default_url_options = { host: '13.126.104.144', port: 80 }
 
